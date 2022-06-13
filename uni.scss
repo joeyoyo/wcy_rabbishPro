@@ -13,56 +13,51 @@
  */
 
 /* 颜色变量 */
+$color: #4D85F7;
 
 /* 行为相关颜色 */
-$uni-color-primary: #007aff;
-$uni-color-success: #4cd964;
-$uni-color-warning: #f0ad4e;
-$uni-color-error: #dd524d;
+$uni-color-primary: #87afff;  // 次要
+$uni-color-tip: #10d39a;  //提示
+$uni-color-warning: #ffaf20;  //重要
+$uni-color-error:  #f85446;    //紧急
 
 /* 文字基本颜色 */
-$uni-text-color:#333;//基本色
+$uni-text-color:#7F7E7E;//基本色 (中度灰)
+$uni-text-color-deep: #323232;//重度灰
 $uni-text-color-inverse:#fff;//反色
-$uni-text-color-grey:#999;//辅助灰色，如加载更多的提示信息
-$uni-text-color-placeholder: #808080;
-$uni-text-color-disable:#c0c0c0;
+$uni-text-color-grey:#D0D0D0;//辅助灰色，如加载和输入框灰色文字
 
 /* 背景颜色 */
 $uni-bg-color:#ffffff;
-$uni-bg-color-grey:#f8f8f8;
+$uni-bg-color-grey:#ECEFF8;
 $uni-bg-color-hover:#f1f1f1;//点击状态颜色
 $uni-bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
+$uni-bg-color-card:#4D85F7;
+
+/* 頭部背景颜色 */
+$uni-header-bg:#6AC039;
+
+/* 按鈕 */
+$uni-btn-blue:#6AC039; //藍色
 
 /* 边框颜色 */
-$uni-border-color:#c8c7cc;
+$uni-border-color:#DDDDDD;
 
-/* 尺寸变量 */
+$uni-border-active:#1CD59F; //选择框边线
+
+/* 三角形颜色 */
+$uni-triangle-color:#999999;
+
+
+/* shadow */
+$uni-shadow-color:rgba(102, 156, 255, 0.25);
+$uni-shadow-border-color:rgba(238, 238, 238, 1);
+
 
 /* 文字尺寸 */
-$uni-font-size-sm:24upx;
-$uni-font-size-base:28upx;
-$uni-font-size-lg:32upx;
-
-/* 图片尺寸 */
-$uni-img-size-sm:40upx;
-$uni-img-size-base:52upx;
-$uni-img-size-lg:80upx;
-
-/* Border Radius */
-$uni-border-radius-sm: 4upx;
-$uni-border-radius-base: 6upx;
-$uni-border-radius-lg: 12upx;
-$uni-border-radius-circle: 50%;
-
-/* 水平间距 */
-$uni-spacing-row-sm: 10px;
-$uni-spacing-row-base: 20upx;
-$uni-spacing-row-lg: 30upx;
-
-/* 垂直间距 */
-$uni-spacing-col-sm: 8upx;
-$uni-spacing-col-base: 16upx;
-$uni-spacing-col-lg: 24upx;
+$uni-font-size-sm:24rpx;
+$uni-font-size-base:28rpx;
+$uni-font-size-lg:32rpx;
 
 /* 透明度 */
 $uni-opacity-disabled: 0.3; // 组件禁用态的透明度
@@ -74,3 +69,51 @@ $uni-color-subtitle: #555555; // 二级标题颜色
 $uni-font-size-subtitle:36upx;
 $uni-color-paragraph: #3F536E; // 文章段落颜色
 $uni-font-size-paragraph:30upx;
+
+/* table */
+$uni-table-title-bg:rgba(236, 245, 255, 1); //  表格头部背景
+$uni-table-title-border:rgba(179, 216, 255, 1); //  表格头部边框
+$uni-table-th-bg:#f6f6f6; //  表格th背景
+$uni-table-th-border:rgba(198, 198, 198, 0.5); //  表格th边框
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin ellipsis2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /*! autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-tab-center {
+  display: flex;
+  flex-direction: row;
+  height: 110px;
+  padding: 0 150px;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-top: 1PX solid #e0e0e0;
+  border-radius: 0 0 20px 20px;
+}
