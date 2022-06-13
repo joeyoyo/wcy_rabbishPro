@@ -34,7 +34,7 @@
 				}
 			}
 		},
-		
+
 		{
 			"path": "pages/account/index",
 			"style": {
@@ -45,7 +45,17 @@
 				}
 			}
 		}
-    ],
+	],
+	"subPackages": [{
+		"root": "pages/subpages/index",
+		"pages": [{
+			"path": "company",
+			"style": {
+				"navigationBarTitleText": "公司简介",
+				"navigationStyle": "custom"
+			}
+		}]
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

@@ -68,4 +68,24 @@ export function apiGetSwiper(data) {
 	})
 }
 
+//获取产品列表
+export function apiGetGoods(data) {
+	return request.request({
+		url: '/goods',
+		method: 'GET',
+		data,
+		hideLoading: true
+	})
+}
+
+//获取公司简介信息
+export function apiGetCompany(data) {
+	return request.request({
+		url: '/company',
+		method: 'GET',
+		data,
+		hideLoading: true
+	})
+}
+
 
