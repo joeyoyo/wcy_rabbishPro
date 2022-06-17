@@ -48,10 +48,19 @@ import request from '@/utils/request/index.js'
 // 	})
 // }
 
-//登录
+//登录接口
 export function apiLogin(data) {
 	return request.request({
 		url:'/login',
+		method: 'POST',
+		data,
+		hideLoading: true
+	})
+}
+//注册接口
+export function apiRegister(data) {
+	return request.request({
+		url:'/register',
 		method: 'POST',
 		data,
 		hideLoading: true
@@ -87,5 +96,16 @@ export function apiGetCompany(data) {
 		hideLoading: true
 	})
 }
+
+//获取用户信息
+export function apiGetUser(data) {
+	return request.request({
+		url: '/user',
+		method: 'GET',
+		data,
+		hideLoading: true
+	})
+}
+
 
 

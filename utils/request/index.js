@@ -18,7 +18,7 @@ const reqInterceptor = async (options) => {
 	options.header = { // 头部塞入token 进行验证
 		...options.header,
 		// token: '75f360c6-8680-436e-ad87-7bb763817e7d'
-		token:store.state.token
+		Authorization:'Bearer ' + store.state.token
 		
 	}
 	console.log(options.header);

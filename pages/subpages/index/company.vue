@@ -39,7 +39,9 @@
 			onCompanyTap(){
 				apiGetCompany().then(res=>{
 					if(res.code === 200){
-						this.companyInfo = res.response[0].data
+						let str = res.response[0].data
+						str = str.replace(/(\\)/g, ""); // 去掉\
+						this.companyInfo = str.replace(/\<img src="/gi, '<img src="https://www.xxweifeitong.cn');
 					}
 				}).catch(err=>{
 					console.log(err);
