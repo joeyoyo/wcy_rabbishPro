@@ -1,5 +1,9 @@
 <template>
 	<view class="content">
+		<uni-nav-bar fixed :status-bar="true" @clickLeft="goLeft">
+			<block slot="left"><uniIcon type="arrowleft" color="#FFF" size="25" /></block>
+			<view class="tac">注册页</view>
+		</uni-nav-bar>
 		<view class="cu-form-group">
 			<view class="title">账号</view>
 			<input placeholder="请输入账号" v-model="username"></input>
@@ -29,7 +33,13 @@
 
 <script>
 	import { apiRegister} from '@/apis/api.js';
+	import uniNavBar from '@/components/uni-nav-bar/uni-nav-bar.vue';
+	import uniIcon from '@/components/uni-icon/uni-icon.vue';
 	export default {
+		components: {
+			uniNavBar,
+			uniIcon
+		},
 		data() {
 			return {
 				username:'',
@@ -43,6 +53,11 @@
 
 		},
 		methods: {
+			goLeft() {
+				uni.navigateBack({
+					delta: 1
+				});
+			},
 			eyeTap(){
 				this.eyeStatus = !this.eyeStatus
 			},
@@ -90,9 +105,6 @@
 </script>
 
 <style lang="scss">
-	.content {
-		margin: 20rpx 0;
-	}
 	.cu-form-group{
 		.input-row {
 			flex: 1;

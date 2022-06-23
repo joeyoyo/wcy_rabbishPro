@@ -9,12 +9,29 @@
 				<view class="txt" @tap="loginTap">用户名:{{accountInfo.username}}</view>
 				<view class="txt" @tap="loginTap">邮箱:{{accountInfo.email}}</view>
 			</view>
-		
 		</view>
+		<form>
+			<view class="cu-form-group">
+				<view class="title">回收流程</view>
+				<text class='cuIcon-right'></text>
+			</view>
+			<view class="cu-form-group">
+				<view class="title">订单详情</view>
+				<text class='cuIcon-right'></text>
+			</view>
+			<view class="cu-form-group">
+				<view class="title">联系我们</view>
+				<text class='cuIcon-right'></text>
+			</view>
+			<view class="padding">
+				<button class="cu-btn block bg-blue margin-tb-sm lg" v-if="loginFlag" @tap="logout">退出</button>
+			</view>
+		</form>
 	</view>
 </template>
 
 <script>
+	import { mapMutations } from 'vuex';
 	import { apiGetUser } from '@/apis/api.js';
 	export default {
 		data() {
@@ -46,7 +63,7 @@
 			}
 		},
 		methods: {
-			
+			...mapMutations(['SET_TOKEN']),
 			loginTap() {
 				uni.navigateTo({
 					url: '../subpages/index/login',
@@ -63,17 +80,20 @@
 							icon:'none',
 							title:res.message + ',请重新登录'
 						})
-						setTimeout(()=>{
-							uni.navigateTo({
-								url: '../subpages/index/login',
-							});
-						}, 100);
 					}
 					
 				}).catch(err=>{
 					console.log(err);
 				})
 			},
+			//退出
+			logout(){
+				this.SET_TOKEN('') //把token清除
+				this.accountInfo = {}
+				uni.navigateTo({
+					url: '../subpages/index/login',
+				});
+			}
 			
 		},
 	}

@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<uni-nav-bar fixed :status-bar="true" @clickLeft="goLeft">
-			<block slot="left"><uni-icon type="arrowleft" color="#FFF" size="25" /></block>
+			<block slot="left"><uniIcon type="arrowleft" color="#FFF" size="25" /></block>
 			<view class="tac">公司简介</view>
 		</uni-nav-bar>
 		<view class="page-content">

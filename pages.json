@@ -57,14 +57,14 @@
 		},{
 			"path": "login",
 			"style": {
-				"navigationBarTitleText": "登录页"
-				// "navigationStyle": "custom"
+				"navigationBarTitleText": "登录页",
+				"navigationStyle": "custom"
 			}
 		},{
 			"path": "register",
 			"style": {
-				"navigationBarTitleText": "注册页"
-				// "navigationStyle": "custom"
+				"navigationBarTitleText": "注册页",
+				"navigationStyle": "custom"
 			}
 		}]
 	}],
