@@ -1,5 +1,9 @@
 <template>
 	<view class="content">
+		<uni-nav-bar fixed :status-bar="true" @clickLeft="goLeft">
+			<block slot="left"><uniIcon type="arrowleft" color="#FFF" size="25" /></block>
+			<view class="tac">登陆页</view>
+		</uni-nav-bar>
 		<view class="cu-form-group">
 			<view class="title">账号</view>
 			<input placeholder="请输入账号" v-model="username"></input>
@@ -20,9 +24,15 @@
 </template>
 
 <script>
+	import uniNavBar from '@/components/uni-nav-bar/uni-nav-bar.vue';
+	import uniIcon from '@/components/uni-icon/uni-icon.vue';
 	import { mapMutations } from 'vuex';
 	import { apiLogin} from '@/apis/api.js';
 	export default {
+		components: {
+			uniNavBar,
+			uniIcon
+		},
 		data() {
 			return {
 				username:'',
@@ -34,6 +44,11 @@
 
 		},
 		methods: {
+			goLeft() {
+				uni.navigateBack({
+					delta: 1
+				});
+			},
 			...mapMutations(['SET_TOKEN']),
 			eyeTap(){
 				this.eyeStatus = !this.eyeStatus
@@ -50,13 +65,18 @@
 						//请求成功后，token 用于后面其他请求接口头部条件，
 						this.SET_TOKEN(res.token) //把token存到vuex
 						uni.switchTab({
-							url: '../../account/index'
+							url: '../../account/index',
 						});
+						
 					}else{
+						//登录失败统一操作
 						uni.showToast({
 							icon:'none',
 							title: res.message
 						});
+						//清空操作
+						this.username = ''
+						this.password = ''
 					}
 					
 				}).catch(err=>{
@@ -75,9 +95,6 @@
 </script>
 
 <style lang="scss">
-	.content {
-		margin: 20rpx 0;
-	}
 	.cu-form-group{
 		.input-row {
 			flex: 1;
