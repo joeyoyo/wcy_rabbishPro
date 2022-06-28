@@ -82,7 +82,7 @@
 					console.log(res);
 					if(res.code === 200){
 						uni.showToast({
-							title:'注册成功',
+							title:res.message,
 						})
 						setTimeout(() =>{
 							uni.navigateTo({
