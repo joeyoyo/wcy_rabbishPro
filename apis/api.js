@@ -107,5 +107,15 @@ export function apiGetUser(data) {
 	})
 }
 
+//微信授权登录
+export function apiWxLogin(data) {
+	return request.request({
+		url: '/wxLogin',
+		method: 'POST',
+		data,
+		hideLoading: true
+	})
+}
+
 
 

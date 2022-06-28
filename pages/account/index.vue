@@ -47,8 +47,7 @@
 			imgUrl(){
 				//如果登录了
 				if(JSON.stringify(this.accountInfo) !== '{}'){
-					return 'http://127.0.0.1:3000' + this.accountInfo['avtar']
-					
+				  return this.accountInfo['avtar'].indexOf('http') !== -1 ? this.accountInfo['avtar'] : ('http://127.0.0.1:3000' + this.accountInfo['avtar'])
 				}else{ //未登录
 					return '../../static/image/account/notLogin1.png'
 				}
@@ -115,6 +114,7 @@
 			.img{
 				width: 100rpx;
 				height: 100rpx;
+				border-radius: 50%;
 			}
 			
 		}
