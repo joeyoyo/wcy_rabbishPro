@@ -22,18 +22,18 @@
 				}
 			}
 		},
-		{
-			"path": "pages/order/index",
-			"style": {
-				"navigationBarTitleText": "订单",
-				"navigationStyle": "custom",
-				"app-plus": {
-					"bounce": "none", // 取消iOS回弹,避免和下拉刷新冲突
-					"disableScroll": true, // Android小程序卡顿 
-					"softinputNavBar": "none"
-				}
-			}
-		},
+		// {
+		// 	"path": "pages/order/index",
+		// 	"style": {
+		// 		"navigationBarTitleText": "订单",
+		// 		"navigationStyle": "custom",
+		// 		"app-plus": {
+		// 			"bounce": "none", // 取消iOS回弹,避免和下拉刷新冲突
+		// 			"disableScroll": true, // Android小程序卡顿 
+		// 			"softinputNavBar": "none"
+		// 		}
+		// 	}
+		// },
 
 		{
 			"path": "pages/account/index",
@@ -86,12 +86,12 @@
 				"selectedIconPath": "static/tab/t_11.png",
 				"text": "首页"
 			},
-			{
-				"pagePath": "pages/order/index",
-				"iconPath": "static/tab/t_2.png",
-				"selectedIconPath": "static/tab/t_22.png",
-				"text": "订单"
-			},
+			// {
+			// 	"pagePath": "pages/order/index",
+			// 	"iconPath": "static/tab/t_2.png",
+			// 	"selectedIconPath": "static/tab/t_22.png",
+			// 	"text": "订单"
+			// },
 			{
 				"pagePath": "pages/placeOrder/index",
 				"iconPath": "static/tab/t_3.png",
