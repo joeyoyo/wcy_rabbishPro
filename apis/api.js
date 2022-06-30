@@ -118,4 +118,23 @@ export function apiWxLogin(data) {
 }
 
 
+//下单
+export function apiAddOrder(data) {
+	return request.request({
+		url: '/addOrder',
+		method: 'POST',
+		data,
+		hideLoading: true
+	})
+}
+//历史订单
+export function apiGetOrder(data) {
+	return request.request({
+		url: '/order',
+		method: 'POST',
+		data,
+		hideLoading: true
+	})
+}
+
 
