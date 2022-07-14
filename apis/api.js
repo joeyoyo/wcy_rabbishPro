@@ -137,4 +137,55 @@ export function apiGetOrder(data) {
 	})
 }
 
+//修改密码发送验证码
+export function apiSendcode(data) {
+	return request.request({
+		url: '/sendCode',
+		method: 'POST',
+		data,
+		hideLoading: true
+	})
+}
+
+//修改密码
+export function apiModifyPassword(data) {
+	return request.request({
+		url: '/modifyPassword',
+		method: 'POST',
+		data,
+		hideLoading: true
+	})
+}
+
+//绑定邮箱发送验证码
+export function apiBindEmailCode(data) {
+	return request.request({
+		url: '/bindEmailCode',
+		method: 'POST',
+		data,
+		hideLoading: true
+	})
+}
+
+//绑定邮箱
+export function apiBindEmail(data) {
+	return request.request({
+		url: '/bindEmail',
+		method: 'POST',
+		data,
+		hideLoading: true
+	})
+}
+
+//联系我们
+export function apiGetContactus(data) {
+	return request.request({
+		url: '/contactUs',
+		method: 'GET',
+		data,
+		hideLoading: true
+	})
+}
+
+
 

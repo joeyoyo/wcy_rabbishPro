@@ -7,20 +7,24 @@
 			</view>
 			<view class="userinfo" v-if="loginFlag">
 				<view class="txt" @tap="loginTap">用户名:{{accountInfo.username}}</view>
-				<view class="txt" @tap="loginTap">邮箱:{{accountInfo.email}}</view>
+				<view class="txt" @tap="loginTap" v-if="accountInfo.email">邮箱:{{accountInfo.email}}</view>
 			</view>
 		</view>
 		<form>
-			<view class="cu-form-group">
+			<view class="cu-form-group" @tap="reprocess">
 				<view class="title">回收流程</view>
 				<text class='cuIcon-right'></text>
 			</view>
-			<view class="cu-form-group">
+			<view class="cu-form-group" @tap="orderTap">
 				<view class="title">订单详情</view>
 				<text class='cuIcon-right'></text>
 			</view>
-			<view class="cu-form-group">
-				<view class="title">联系我们</view>
+			<view class="cu-form-group" @tap="bindEmail" v-if="loginFlag && !accountInfo.email">
+				<view class="title">绑定邮箱</view>
+				<text class='cuIcon-right'></text>
+			</view>
+			<view class="cu-form-group" @tap="aboutUs">
+				<view class="title" >联系我们</view>
 				<text class='cuIcon-right'></text>
 			</view>
 			<view class="padding">
@@ -63,6 +67,21 @@
 		},
 		methods: {
 			...mapMutations(['SET_TOKEN']),
+			orderTap(){
+				uni.navigateTo({
+					url: '../subpages/index/historyOrder',
+				});
+			},
+			aboutUs(){
+				uni.navigateTo({
+					url: '../subpages/index/about',
+				});
+			},
+			reprocess(){
+				uni.navigateTo({
+					url: '../subpages/index/reprocess',
+				});
+			},
 			loginTap() {
 				uni.navigateTo({
 					url: '../subpages/index/login',
@@ -92,6 +111,13 @@
 				uni.navigateTo({
 					url: '../subpages/index/login',
 				});
+			},
+			//绑定邮箱
+			bindEmail(){
+				uni.navigateTo({
+					url: '../subpages/index/bindEmail?item=' + encodeURIComponent(this.accountInfo.username),
+				});
+				
 			}
 			
 		},

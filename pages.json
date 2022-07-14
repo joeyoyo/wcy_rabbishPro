@@ -66,6 +66,39 @@
 				"navigationBarTitleText": "注册页",
 				"navigationStyle": "custom"
 			}
+		},{
+			"path": "historyOrder",
+			"style": {
+				"navigationBarTitleText": "历史订单",
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "forget_pass",
+			"style": {
+				"navigationBarTitleText": "忘记密码",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "bindEmail",
+			"style": {
+				"navigationBarTitleText": "绑定邮箱",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "about",
+			"style": {
+				"navigationBarTitleText": "关于我们",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "reprocess",
+			"style": {
+				"navigationBarTitleText": "回收流程",
+				"navigationStyle": "custom"
+			}
 		}]
 	}],
 	"globalStyle": {
