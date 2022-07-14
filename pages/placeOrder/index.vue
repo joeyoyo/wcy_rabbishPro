@@ -68,6 +68,7 @@
 				index1: -1,
 				picker1: [],
 				orderList: {
+					goods_name: '',
 					goods_id: '',
 					name: '',
 					phone: '',
@@ -123,6 +124,11 @@
 				apiGetGoods().then(res => {
 					if(res.code === 200){
 						this.picker1 = res.response;
+					}else{
+						uni.showToast({
+							icon:'none',
+							title:res.message + ',请重新登录'
+						})
 					}
 				}).catch(err => {
 					console.log(err);
@@ -185,6 +191,7 @@
 			PickerChange1(e) {
 				this.index1 = e.detail.value;
 				this.orderList.goods_id = this.picker1[this.index1]._id;
+				this.orderList.goods_name = this.picker1[this.index1].name;
 				console.log( e.detail.value,this.orderList.goods_id);
 			}
 

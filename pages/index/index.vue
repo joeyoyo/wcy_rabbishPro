@@ -46,7 +46,7 @@
 				companyInfo:''
 			};
 		},
-		onLoad() {
+		onShow() {
 			this.apiGetSwiper()
 			this.apiGetGoods()
 		},
@@ -70,6 +70,11 @@
 				apiGetGoods().then(res=>{
 					if(res.code === 200){
 						this.goodsList = res.response
+					}else{
+						uni.showToast({
+							icon:'none',
+							title:res.message + ',请重新登录'
+						})
 					}
 				}).catch(err=>{
 					console.log(err);
@@ -77,17 +82,13 @@
 			},
 			//点击公司简介
 			onCompanyTap(){
-				// apiGetCompany().then(res=>{
-				// 	if(res.code === 200){
-				// 		this.companyInfo = res.response
-				// 	}
-				// }).catch(err=>{
-				// 	console.log(err);
-				// })
 				uni.navigateTo({
 					url: '/pages/subpages/index/company'
 				});
 			}
+			// mbqgfdebpxfxbfhd   po3
+			
+			// ukebvzseowesbecc   imap
 			
 		}
 	}

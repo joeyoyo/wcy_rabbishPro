@@ -17,8 +17,9 @@
 		<view class="padding">
 			<button class="cu-btn block bg-blue margin-tb-sm lg" @tap="apiLogin">登录</button>
 		</view>
-		<view class="padding">
-			<button class="cu-btn block bg-green margin-tb-sm lg" @tap="apiRegister">注册</button>
+		<view class="tab">
+			<view class="txt" @tap="apiRegister">用户注册</view>
+			<view class="txt" @tap="forgetPass">忘记密码</view>
 		</view>
 		<!-- #ifdef MP-WEIXIN -->
 			<view class="wx">
@@ -101,6 +102,12 @@
 				});
 				
 			},
+			//忘记密码
+			forgetPass() {
+				uni.navigateTo({
+					url: '/pages/subpages/index/forget_pass'
+				});
+			},
 			//微信登录
 			getUserProfile () {
 			    var p1 = new Promise((resolve, reject) => {
@@ -181,6 +188,16 @@
 			}
 		}
 		
+	}
+	.tab {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 30rpx 0;
+		.txt {
+			padding: 10rpx;
+			margin: 0rpx 30rpx;
+		}
 	}
 	.wx {
 		width: 100%;
